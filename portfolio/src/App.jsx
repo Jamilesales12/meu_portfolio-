@@ -6,6 +6,8 @@ import Hero from './components/Hero'
 import ProjectsSection from './components/ProjectsSection'
 import { designProjects, developmentProjects } from './data/portfolioData'
 
+const publicAsset = (assetPath) => `${import.meta.env.BASE_URL}${assetPath}`
+
 export default function App() {
   const [darkMode, setDarkMode] = useState(false)
 
@@ -14,7 +16,10 @@ export default function App() {
 
     const favicon = document.getElementById('app-favicon')
     if (favicon) {
-      favicon.setAttribute('href', darkMode ? '/icon_dark_mode.png' : '/icon_jam.png')
+      favicon.setAttribute(
+        'href',
+        darkMode ? publicAsset('icon_dark_mode.png') : publicAsset('icon_jam.png'),
+      )
     }
   }, [darkMode])
 
