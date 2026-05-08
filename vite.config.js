@@ -5,7 +5,8 @@ import { resolve } from 'node:path'
 
 export default defineConfig({
   root: resolve(__dirname, 'portfolio'),
-  publicDir: resolve(__dirname, 'assets'),
+  publicDir: resolve(__dirname, 'portfolio', 'public'),
+  base: '/Jamilesales12/',
   plugins: [
     react(),
     tailwindcss(),

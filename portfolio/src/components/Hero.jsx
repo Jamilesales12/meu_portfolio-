@@ -1,5 +1,7 @@
 import { socialLinks } from '../data/portfolioData'
 
+const publicAsset = (assetPath) => `${import.meta.env.BASE_URL}${assetPath}`
+
 export default function Hero({ darkMode }) {
   return (
     <section className="space-y-10 lg:space-y-16">
@@ -44,7 +46,7 @@ export default function Hero({ darkMode }) {
                 ? 'border-[#E6D8C3]/10 bg-[#E6D8C3]/5 shadow-black/30'
                 : 'border-[#3E342A]/10 bg-white/30 shadow-[#3E342A]/10',
             ].join(' ')}
-            src={darkMode ? '/jam_dark_mode.png' : '/jamile .png'}
+            src={darkMode ? publicAsset('jam_dark_mode.png') : publicAsset('jamile .png')}
             alt="Jamile Sales"
           />
         </div>
